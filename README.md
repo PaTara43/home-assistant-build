@@ -1,6 +1,6 @@
 # home-assistant-build
 
-This repository contains docker compose file with Home Assistant + zigbee2mqtt.
+This repository contains docker compose file with Home Assistant + zigbee2mqtt. It's a cut version of https://github.com/airalab/home-assistant-web3-build with no web3.
 
 ## Requirements 
 
