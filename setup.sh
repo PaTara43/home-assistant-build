@@ -111,15 +111,6 @@ else
   exit 1
 fi
 
-# create IPFS repositories
-if [[ -d ./ipfs/data ]]
-then
-  echo "IPFS directory already exist"
-else
-  mkdir -p "ipfs/data"
-  mkdir -p "ipfs/staging"
-fi
-
 # mqtt broker
 if [[ -d ./mosquitto ]]
 then
@@ -166,6 +157,7 @@ else
   serial:
     # Location of CC2531 USB sniffer
     port: /dev/ttyACM0
+    adapter: $ZIGBEE_ADAPTER
 
   " | tee ./zigbee2mqtt/data/configuration.yaml
 fi
@@ -208,21 +200,6 @@ else
   }
   " | tee ./homeassistant/.storage/core.config_entries
 
-fi
-
-# create homeassistant/custom_components repository
-if [[ -d ./homeassistant/custom_components ]]
-then
-  echo "homeassistant/custom_components directory already exist"
-else
-  mkdir -p "homeassistant/custom_components"
-
-  #download robonomics integration and unpack it
-  wget https://github.com/airalab/homeassistant-robonomics-integration/archive/refs/tags/$ROBONOMICS_VERSION.zip &&
-  unzip $ROBONOMICS_VERSION.zip &&
-  mv homeassistant-robonomics-integration-$ROBONOMICS_VERSION/custom_components/robonomics ./homeassistant/custom_components/ &&
-  rm -r homeassistant-robonomics-integration-$ROBONOMICS_VERSION &&
-  rm $ROBONOMICS_VERSION.zip
 fi
 
 # return to the directory with compose

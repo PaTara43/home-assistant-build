@@ -1,6 +1,6 @@
-# home-assistant-web3-build
+# home-assistant-build
 
-This repository contains docker compose file with Home Assistant + ipfs daemon + libp2p proxy + zigbee2mqtt.
+This repository contains docker compose file with Home Assistant + zigbee2mqtt.
 
 ## Requirements 
 
@@ -20,14 +20,14 @@ then, install additional packages:
 sudo apt-get install wget unzip git jq
 ```
 
-**Insert zigbee coordinator in your PC before start script!** 
+**Insert zigbee coordinator in your PC before starting script!** 
 
 ## Configuration
 
 First, download the repository and go to it:
 ```commandline
-git clone https://github.com/airalab/home-assistant-web3-build
-cd home-assistant-web3-build/
+git clone https://github.com/PaTara43/home-assistant-build
+cd home-assistant-build/
 ```
 
 then you have to create `.env` file. Convert it from `template.env` file:
