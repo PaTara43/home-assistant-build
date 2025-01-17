@@ -131,8 +131,9 @@ else
 
   #zigbee2mqtt
   echo "# Home Assistant integration (MQTT discovery)
-  homeassistant: true
-
+  homeassistant:
+    enabled: true
+    legacy_action_sensor: true
   # allow new devices to join
   permit_join: false
 
